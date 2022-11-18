@@ -2,3 +2,6 @@
 *.iml
 target/
 **/Makefile
+templates
+docker-practice
+.mvn

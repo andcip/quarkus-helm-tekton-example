@@ -1,0 +1,30 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
+  name: application
+spec:
+  params:
+    - name: git-repo-url
+      description: The git repository url
+    - name: git-revision
+      description: The git revision
+      default: master
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName: application-
+      spec:
+        serviceAccountName: pipeline
+        pipelineRef:
+          name: application
+        workspaces:
+          - name: shared-workspace
+            persistentVolumeClaim:
+              claimName: application-dev-pipeline-workspace
+          - name: maven-settings
+            configMap:
+              name: application-maven-settings
+          - name: basic-auth
+            secret:
+              name: application-git-basic-auth-repo

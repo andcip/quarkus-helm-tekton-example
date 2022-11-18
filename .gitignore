@@ -2,6 +2,7 @@
 *.iml
 target/
 **/Makefile
+**/secret.yaml
 templates
 docker-practice
 .mvn

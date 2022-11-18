@@ -6,7 +6,6 @@ spec:
   workspaces:
     - name: shared-workspace
     - name: maven-settings
-    - name: git-basic-auth
   tasks:
     ## Fetch repo from Git
     - name: fetch-repository
@@ -27,8 +26,6 @@ spec:
       workspaces:
         - name: output
           workspace: shared-workspace
-        - name: basic-auth
-          workspace: git-basic-auth
     ## Build with maven
     - name: maven-package
       taskRef:

@@ -25,6 +25,3 @@ spec:
           - name: maven-settings
             configMap:
               name: application-maven-settings
-          - name: basic-auth
-            secret:
-              name: application-git-basic-auth-repo

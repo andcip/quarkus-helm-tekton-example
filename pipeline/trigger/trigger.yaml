@@ -13,7 +13,7 @@ spec:
             secretName: gitlab-secret
             secretKey: secretToken
         - name: "eventTypes"
-          value: ["Push Hook"]
+          value: ["push"]
   bindings:
     - ref: application
   template:

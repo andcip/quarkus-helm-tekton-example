@@ -6,7 +6,7 @@ spec:
   serviceAccountName: pipeline
   interceptors:
     - ref:
-        name: "gitlab"
+        name: "github"
       params:
         - name: "secretRef"
           value:

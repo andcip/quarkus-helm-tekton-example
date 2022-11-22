@@ -11,7 +11,7 @@ public class Check implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.up("alive");
+        return HealthCheckResponse.up("workshop");
     }
 
 }
